@@ -18,6 +18,7 @@ from fairseq.data import iterators
 from fairseq.logging import meters, metrics, progress_bar
 from fairseq.model_parallel.megatron_trainer import MegatronTrainer
 from fairseq.trainer import Trainer
+from IPython.display import clear_output
 
 
 def get_training_stats(stats):
@@ -79,7 +80,8 @@ class Pipeline:
 
     def train(self, epoch_itr):
         """Train the model for one epoch and return validation losses."""
-
+        
+        clear_output()
         print("-"*25 + " begin training epoch {} ".format(epoch_itr.epoch) + "-"*25 + "\n")
 
         # Initialize data iterator
